@@ -33,15 +33,12 @@ def transacao(request):
 
 
 def	listacli(request):
-	lista_clientes = Cliente.objects.all()
-	return render_to_response("lista.html", {'lista_clientes': lista_clientes },
-		context_instance=RequestContext(request))
-
-	try:
-		lista_item = Itemagenda.objects.all()
-	except Itemagenda.DoesNotExist:
-		raise Http404(u"Tabela sem dados !")
-	return render_to_response("lista.html", {'lista_item': lista_item },
+#	lista_clientes = Cliente.objects.all()
+#	return render_to_response("lista.html", {'lista_clientes': lista_clientes },
+#		context_instance=RequestContext(request))
+	lista_itens = Itemagenda.objects.all()
+	Itemagenda.DoesNotExist:
+	return render_to_response("lista.html", {'lista_itens': lista_itens },
 		context_instance=RequestContext(request))
 
 def	adccliente(request):
